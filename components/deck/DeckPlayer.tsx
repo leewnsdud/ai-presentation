@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, type ReactElement } from "react";
 import { DeckEntry, DeckComponent } from "@/data/deck";
 import { useDeckNav } from "./useDeckNav";
 import { DeckShell } from "./DeckShell";
@@ -16,7 +16,7 @@ import { SummarySlide } from "../slides/SummarySlide";
 import { LinksSlide } from "../slides/LinksSlide";
 import { QASlide } from "../slides/QASlide";
 
-type SlideComponent = (props: SlideProps<unknown>) => JSX.Element | null;
+type SlideComponent = (props: SlideProps<any>) => ReactElement | null;
 
 const slideRegistry: Record<DeckComponent, SlideComponent> = {
   title: TitleSlide,
